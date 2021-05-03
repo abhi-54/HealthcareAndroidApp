@@ -21,7 +21,7 @@ import static java.lang.Math.round;
 
 
 public class FootstepFragment extends Fragment implements SensorEventListener {
-    private TextView stepDetector, calorietextview;
+    private TextView stepDetector, calorietextview, distancetextview;
     private SensorManager sensorManager;
     private Sensor mStepCounter, mStepDetector;
     private boolean isCounterSensorPresent, isDetectorSensorPresent;
@@ -29,6 +29,7 @@ public class FootstepFragment extends Fragment implements SensorEventListener {
     int detect = 0;
     int finalsteps= 0;
     double cal=0;
+    double feet, distance;
 
     @Nullable
     @Override
@@ -39,6 +40,7 @@ public class FootstepFragment extends Fragment implements SensorEventListener {
         //stepCounter = v.findViewById(R.id.stepCount);
         stepDetector = v.findViewById(R.id.stepDetect);
         calorietextview = v.findViewById(R.id.calories);
+        distancetextview = v.findViewById(R.id.tv_distance);
 
         getActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
@@ -76,9 +78,14 @@ public class FootstepFragment extends Fragment implements SensorEventListener {
         else if (sensorEvent.sensor == mStepDetector) {
             detect = (int) (detect + sensorEvent.values[0]);
             finalsteps = (int) count - detect;
-            stepDetector.setText(String.valueOf(detect));
-            cal = (detect * 0.045);
+            stepDetector.setText(String.valueOf(count));
+
+            cal = (count * 0.045);
             calorietextview.setText(String.format("%.2f", cal));
+
+            feet = (double) (count * 1.4);
+            distance = (feet /3.28);
+            distancetextview.setText(String.format("%.2f", distance));
         }
 
     }

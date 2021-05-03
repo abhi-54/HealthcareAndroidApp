@@ -27,7 +27,7 @@
         <TextView
             android:layout_width="93dp"
             android:layout_height="33dp"
-            android:layout_centerInParent="true"
+            android:layout_marginTop="26dp"
             android:textSize="28sp"
             android:id="@+id/stepDetect"
             android:text="0"
@@ -45,15 +45,16 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_marginTop="300dp">
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="280dp"
+        android:layout_marginLeft="20dp"
+        android:id="@+id/for_calories">
 
         <TextView
             android:id="@+id/calories"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
             android:textColor="#3D6CFC"
             android:drawableLeft="@drawable/calories"
             android:drawablePadding="10dp"
@@ -63,9 +64,49 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:textStyle="bold"
-            android:text="Today's Burnt Calories" />
+            android:text="Today's Burnt Calories"
+            android:layout_below="@+id/calories"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="40dp"
+            android:textSize="18sp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/for_calories">
+
+        <TextView
+            android:id="@+id/tv_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#3D6CFC"
+            android:drawableLeft="@drawable/distance"
+            android:drawablePadding="10dp"
+            android:text="0"
+            android:textSize="25sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="meters"
+            android:layout_toRightOf="@+id/tv_distance"
+            android:textColor="#3D6CFC"
+            android:layout_marginLeft="5dp"
+            android:textSize="16sp"
+            android:padding="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Today's Distance Covered"
+            android:layout_below="@+id/tv_distance"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="40dp"
+            android:textSize="18sp"/>
 
     </RelativeLayout>
 
