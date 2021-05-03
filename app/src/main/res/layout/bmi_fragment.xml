@@ -12,6 +12,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:ems="6"
+        android:hint="Weight in kg"
         android:inputType="number|numberDecimal"
         android:textSize="20sp"/>
 
@@ -31,8 +32,9 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="150dp"
         android:ems="6"
+        android:hint="Height in cm"
         android:inputType="number|numberDecimal"
-        android:textSize="20sp"/>
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/tv_height"
@@ -51,7 +53,6 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:onClick="calculateBMI"
         android:text="Calculate BMI" />
 
     <TextView
