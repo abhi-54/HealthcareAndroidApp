@@ -47,23 +47,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch (item.getItemId()) {
             case R.id.nav_home:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new HomeFragment()).commit();
+                        new HomeFragment()).addToBackStack(null).commit();
                 break;
             case R.id.nav_bmi:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new BMIFragment()).commit();
+                        new BMIFragment()).addToBackStack(null).commit();
                 break;
             case R.id.nav_footstep:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new FootstepFragment()).commit();
+                        new FootstepFragment()).addToBackStack(null).commit();
                 break;
             case R.id.nav_sleepsuggest:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new SleepSuggestFragment()).commit();
+                        new SleepSuggestFragment()).addToBackStack(null).commit();
                 break;
             case R.id.nav_wateralarm:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new WaterAlarmFragment()).commit();
+                        new WaterAlarmFragment()).addToBackStack(null).commit();
                 break;
             case R.id.nav_share:
                 Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();
