@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SenseFragment"
+    android:id="@+id/layoutOfHome">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+        <TextView
+            android:id="@+id/textViewMQ1"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:background="@color/colorPrimary"
+            android:text=" Garden"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewMQ2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:layout_toEndOf="@+id/textViewMQ1"
+            android:background="#4CAF50"
+            android:text="Normal"
+            android:textAlignment="center"
+            android:textColor="#393737"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textViewMQ3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Air Quality"
+            android:textColor="#000000"
+            android:textSize="22sp"
+            android:layout_below="@+id/textViewMQ1"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:id="@+id/textViewMQ4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AQI"
+            android:textSize="22sp"
+            android:layout_below="@+id/textViewMQ1"
+            android:layout_marginTop="20dp"
+            android:layout_alignStart="@+id/textViewMQ2"/>
+
+        <TextView
+            android:id="@+id/textViewMQ5"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:text=" LED Status"
+            android:textSize="22sp"
+            android:layout_below="@+id/textViewMQ3"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:id="@+id/textViewMQ6"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="#4CAF50"
+            android:text="NA"
+            android:textAlignment="center"
+            android:textColor="#323131"
+            android:textSize="22sp"
+            android:layout_below="@+id/textViewMQ3"
+            android:layout_marginTop="20dp"
+            android:layout_toEndOf="@+id/textViewMQ5"/>
+
+        <Button
+            android:id="@+id/btnMQ1"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:background="#8BC34A"
+            android:text="ON"
+            android:textSize="16sp"
+            android:layout_below="@+id/textViewMQ3"
+            android:layout_marginTop="20dp"
+            android:layout_alignStart="@+id/textViewMQ2"/>
+
+        <Button
+            android:id="@+id/btnMQ2"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:background="#F86343"
+            android:text="OFF"
+            android:textSize="16sp"
+            android:layout_below="@+id/textViewMQ3"
+            android:layout_marginTop="20dp"
+            android:layout_toEndOf="@+id/btnMQ1"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

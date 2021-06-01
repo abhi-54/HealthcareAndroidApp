@@ -13,8 +13,8 @@
             android:id="@+id/nav_footstep"
             android:title="Footstep Monitoring" />
         <item
-            android:id="@+id/nav_sleepsuggest"
-            android:title="Sleep Suggestion" />
+            android:id="@+id/nav_sensor"
+            android:title="Sensor Data" />
         <item
             android:id="@+id/nav_wateralarm"
             android:title="Water Alarm" />

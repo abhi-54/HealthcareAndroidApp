@@ -4,11 +4,14 @@
       <w>calorietextview</w>
       <w>centeranime</w>
       <w>distancetextview</w>
+      <w>dstate</w>
       <w>finalsteps</w>
       <w>healthcare</w>
       <w>nameof</w>
+      <w>qoff</w>
       <w>sleepsuggest</w>
       <w>tvcalories</w>
+      <w>wateralarm</w>
     </words>
   </dictionary>
 </component>

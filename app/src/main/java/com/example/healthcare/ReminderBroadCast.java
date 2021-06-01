@@ -17,7 +17,7 @@ public class ReminderBroadCast extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
 
         NotificationCompat.Builder builder=new NotificationCompat.Builder(context, "notify")
-                .setSmallIcon(R.drawable.notification)
+                .setSmallIcon(R.drawable.healthcare_logo)
                 .setContentTitle("Water Alarm")
                 .setContentText("Hey, this is reminder of water drink")
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);

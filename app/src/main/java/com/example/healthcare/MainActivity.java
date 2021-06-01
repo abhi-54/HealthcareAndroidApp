@@ -57,9 +57,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new FootstepFragment()).addToBackStack(null).commit();
                 break;
-            case R.id.nav_sleepsuggest:
+            case R.id.nav_sensor:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new SleepSuggestFragment()).addToBackStack(null).commit();
+                        new SenseFragment()).addToBackStack(null).commit();
                 break;
             case R.id.nav_wateralarm:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,

@@ -36,7 +36,6 @@ public class BMIFragment extends Fragment {
 
         Button button =v.findViewById(R.id.calc);
         button.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
                 String heightStr = height.getText().toString();
