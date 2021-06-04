@@ -25,6 +25,10 @@ public class SenseFragment extends Fragment {
     private TextView textViewGarden;
     private TextView textViewAQI;
     private TextView textViewLEDstate;
+    private TextView textViewRoom;
+    private TextView textViewCelsius;
+    private TextView textViewPercent;
+    private TextView textViewLEDstateRoom;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -37,6 +41,14 @@ public class SenseFragment extends Fragment {
         Button btnMQon = (Button) v.findViewById(R.id.btnMQ1);
         Button btnMQoff = (Button) v.findViewById(R.id.btnMQ2);
 
+        textViewRoom = (TextView) v.findViewById(R.id.textViewDHT2);
+        textViewCelsius = (TextView) v.findViewById(R.id.textViewDHT4);
+        textViewPercent = (TextView) v.findViewById(R.id.textViewDHT6);
+        textViewLEDstateRoom = (TextView) v.findViewById(R.id.textViewDHT8);
+        Button btnDHTon = (Button) v.findViewById(R.id.btnDHT1);
+        Button btnDHToff = (Button) v.findViewById(R.id.btnDHT2);
+
+        /////////////////**********************Garden**********************/////////////////
         btnMQon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -90,7 +102,66 @@ public class SenseFragment extends Fragment {
 
             }
         });
-        /////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////
+
+        /////////////////**********************Room**********************/////////////////
+
+        btnDHTon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = database.getReference("DHT11");
+
+                myRef.child("LED").setValue("1");
+            }
+        });
+
+        btnDHToff.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = database.getReference("DHT11");
+
+                myRef.child("LED").setValue("0");
+            }
+        });
+
+        DatabaseReference Ref = database.getReference("DHT11");
+
+        Ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String temp = snapshot.child("Temperature").getValue().toString();
+                String hum = snapshot.child("Humidity").getValue().toString();
+                String LED = snapshot.child("LED").getValue().toString();
+
+                textViewCelsius.setText(temp);
+                textViewPercent.setText(hum);
+
+                if (Float.parseFloat(temp) > 40.0 || Float.parseFloat(hum) > 35.0){
+                    textViewRoom.setText("Exceeded");
+                }
+                else {
+                    textViewRoom.setText("Normal");
+                }
+
+                if (LED.equals("1")){
+                    textViewLEDstateRoom.setText("ON");
+                }
+                else {
+                    textViewLEDstateRoom.setText("OFF");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        //////////////////////////////////////////////////////////////////////////////////
 
         return v;
     }

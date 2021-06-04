@@ -5,11 +5,78 @@
     android:id="@+id/layoutOfHome">
 
     <TextView
+        android:id="@+id/topTitleHome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Home"
         android:layout_marginTop="24dp"
-        android:layout_marginLeft="24dp"
-        android:textSize="36sp"/>
+        android:layout_marginLeft="10dp"
+        android:textSize="36sp"
+        android:textColor="@color/border"/>
+
+    <RelativeLayout
+        android:id="@+id/iconTray1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/topTitleHome"
+        android:layout_marginTop="30dp">
+
+        <Button
+            android:id="@+id/footstep"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/running"
+            android:text="FootSteps"
+            android:textAlignment="center"
+            android:background="@android:color/transparent"
+            android:textSize="16sp"
+            android:textAllCaps="false"/>
+
+        <Button
+            android:id="@+id/bmi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BMI"
+            android:textSize="16sp"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@+id/footstep"
+            android:background="@android:color/transparent"
+            android:drawableTop="@drawable/bmi"
+            android:textAllCaps="false"/>
+
+        <Button
+            android:id="@+id/sensor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sensor Data"
+            android:layout_marginLeft="10dp"
+            android:textSize="16sp"
+            android:layout_toEndOf="@+id/bmi"
+            android:background="@android:color/transparent"
+            android:drawableTop="@drawable/sensor"
+            android:textAllCaps="false"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iconTray1"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp">
+
+        <Button
+            android:id="@+id/water"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/water"
+            android:text="Water Alarm"
+            android:textAlignment="center"
+            android:background="@android:color/transparent"
+            android:textSize="16sp"
+            android:textAllCaps="false"/>
+
+    </RelativeLayout>
 
 </RelativeLayout>
