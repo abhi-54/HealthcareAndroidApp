@@ -46,10 +46,11 @@ public class WaterAlarmActivity extends AppCompatActivity {
 
                 long tenSecondsInMillis=1000*10;
 
-                long oneHourInMillis=1000*3600;
-
                 alarmManager.set(AlarmManager.RTC_WAKEUP,timeAtButtonClick+tenSecondsInMillis,pendingIntent);
-            }
+
+
+                }
+
         });
     }
 
