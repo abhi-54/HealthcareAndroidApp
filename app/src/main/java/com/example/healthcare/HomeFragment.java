@@ -32,6 +32,7 @@ public class HomeFragment extends Fragment {
         Button gotoBMI = (Button) v.findViewById(R.id.bmi);
         Button gotoSensor = (Button) v.findViewById(R.id.sensor);
         Button gotoWater = (Button) v.findViewById(R.id.water);
+        Button gotoVitamin = (Button) v.findViewById(R.id.vitamin_btn);
 
 
         gotoFootstep.setOnClickListener(new View.OnClickListener() {
@@ -77,6 +78,17 @@ public class HomeFragment extends Fragment {
                 transaction.commit();
             }
         });
+        gotoVitamin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment gotoVitamin = new vitamins();
+                FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_container,gotoVitamin);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+
 
         return v;
     }
