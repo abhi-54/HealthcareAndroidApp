@@ -1,6 +1,9 @@
 package com.example.healthcare;
 
 import android.annotation.SuppressLint;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -34,8 +37,10 @@ public class WaterAlarmFragment extends Fragment {
         v = inflater.inflate(R.layout.fragment_water_alarm, container, false);
         menBtn=v.findViewById(R.id.men_btn);
         womenBtn=v.findViewById(R.id.women_btn);
+
         return v;
     }
+
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -65,4 +70,6 @@ public class WaterAlarmFragment extends Fragment {
         startActivity(mainIntent1);
         getActivity().finish();
     }
+
+
 }

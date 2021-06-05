@@ -31,27 +31,40 @@ public class WaterAlarmActivity extends AppCompatActivity {
         createNotificationChannel();
 
         Button menAlarmBtn =findViewById(R.id.men_alarm);
+        Button cancelAlarm = findViewById(R.id.cancelAlarm);
+
+        AlarmManager alarmManager= (AlarmManager) getSystemService(ALARM_SERVICE);
+        Intent intent = new Intent(WaterAlarmActivity.this,ReminderBroadCast.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(WaterAlarmActivity.this,0,intent,0);
 
         menAlarmBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(WaterAlarmActivity.this, "Water Reminder set!", Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(WaterAlarmActivity.this,ReminderBroadCast.class);
-                PendingIntent pendingIntent=PendingIntent.getBroadcast(WaterAlarmActivity.this,0,intent,0);
-
-                AlarmManager alarmManager= (AlarmManager) getSystemService(ALARM_SERVICE);
-
                 long timeAtButtonClick= System.currentTimeMillis();
 
-                long tenSecondsInMillis=1000*10;
+                //interval in seconds
+                long timeInterval = 5;
 
-                alarmManager.set(AlarmManager.RTC_WAKEUP,timeAtButtonClick+tenSecondsInMillis,pendingIntent);
-
-
+                alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() +
+                        (timeInterval*1000), timeInterval*1000, pendingIntent);
                 }
 
         });
+
+        cancelAlarm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(WaterAlarmActivity.this, "Water Reminder Ended!", Toast.LENGTH_SHORT).show();
+
+                if (alarmManager != null)
+                {
+                    alarmManager.cancel(pendingIntent);
+                }
+            }
+        });
+
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -69,4 +82,12 @@ public class WaterAlarmActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent i = new Intent(WaterAlarmActivity.this, MainActivity.class);
+        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(i);
+        finish();
+    }
 }
