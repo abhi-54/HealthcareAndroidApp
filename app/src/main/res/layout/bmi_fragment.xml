@@ -13,6 +13,7 @@
         android:layout_marginTop="30dp"
         android:ems="6"
         android:hint="Weight in kg"
+        android:textAlignment="center"
         android:inputType="number|numberDecimal"
         android:textSize="20sp"/>
 
@@ -32,6 +33,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="150dp"
         android:ems="6"
+        android:textAlignment="center"
         android:hint="Height in cm"
         android:inputType="number|numberDecimal"
         android:textSize="20sp" />
@@ -53,6 +55,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
+        android:textAllCaps="false"
+        android:background="@drawable/ripple_effect_bmifragment"
         android:text="Calculate BMI" />
 
     <TextView

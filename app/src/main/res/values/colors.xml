@@ -5,4 +5,5 @@
     <color name="colorAccent">#80854E</color>
     <color name="border">#191B1A</color>
     <color name="buttonColor">#00A6FF</color>
+    <color name="btnVitaminColor">#FFEB3B</color>
 </resources>

@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:text="BMI"
             android:textSize="16sp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="15dp"
             android:layout_toEndOf="@+id/footstep"
             android:background="@android:color/transparent"
             android:drawableTop="@drawable/bmi"
@@ -50,7 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sensor Data"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="15dp"
             android:textSize="16sp"
             android:layout_toEndOf="@+id/bmi"
             android:background="@android:color/transparent"
@@ -77,15 +77,20 @@
             android:textSize="16sp"
             android:textAllCaps="false"/>
 
+        <Button
+            android:id="@+id/vitamin_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/water"
+            android:drawableTop="@drawable/ic_vitamin"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:layout_marginLeft="15dp"
+            android:text="Vitamin Info"
+            android:background="@android:color/transparent"
+            tools:ignore="UnknownId" />
+
     </RelativeLayout>
 
-    <Button
-        android:id="@+id/vitamin_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="191dp"
-        android:text="Button" />
 
 </RelativeLayout>

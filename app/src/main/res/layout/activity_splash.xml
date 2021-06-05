@@ -15,7 +15,7 @@
         android:layout_centerInParent="true"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="Monitor Your Health"
+        android:text="Healthcare"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="50sp"
         android:textStyle="bold|italic"
